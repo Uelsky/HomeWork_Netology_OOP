@@ -141,104 +141,108 @@ def middle_grade_ls(lecturers: list, course):
     except:
         return 0.0
 
+
+
+if __name__ == "__main__":
 # Определяем студентов
-student1 = Student('Иван', 'Козлов', 'муж')
-student2 = Student('Юлия', 'Носова', 'жен')
+    student1 = Student('Иван', 'Козлов', 'муж')
+    student2 = Student('Юлия', 'Носова', 'жен')
 
 # Определяем лекторов
-lecturer1 = Lecturer('Василий', 'Уваров')
-lecturer2 = Lecturer('Светлана', 'Гусева')
+    lecturer1 = Lecturer('Василий', 'Уваров')
+    lecturer2 = Lecturer('Светлана', 'Гусева')
 
 # Определяем проверяющих
-reviewer1 = Reviewer('Алексей', 'Орлов')
-reviewer2 = Reviewer('Александр', 'Зотов')
+    reviewer1 = Reviewer('Алексей', 'Орлов')
+    reviewer2 = Reviewer('Александр', 'Зотов')
 
 # Определяем нынешние и завершенные курсы для всех студентов
-student1.courses_in_progress += ['Django 5', 'OOP']
-student1.add_courses('Python')
-student2.courses_in_progress += ['Java', 'Autotest']
-student2.add_courses('Manual testing')
+    student1.courses_in_progress += ['Django 5', 'OOP']
+    student1.add_courses('Python')
+    student2.courses_in_progress += ['Java', 'Autotest']
+    student2.add_courses('Manual testing')
 
 # Закрепляем курсы за всеми лекторами
-lecturer1.courses_attached += ['Python', 'Django 5', 'OOP']
-lecturer2.courses_attached += ['Manual testing', 'Java', 'Autotest']
+    lecturer1.courses_attached += ['Python', 'Django 5', 'OOP']
+    lecturer2.courses_attached += ['Manual testing', 'Java', 'Autotest']
 
 # Закрепляем курсы за всеми проверяющими
-reviewer1.courses_attached += ['Python', 'Django 5', 'OOP']
-reviewer2.courses_attached += ['Manual testing', 'Java', 'Autotest']
+    reviewer1.courses_attached += ['Python', 'Django 5', 'OOP']
+    reviewer2.courses_attached += ['Manual testing', 'Java', 'Autotest']
 
 # Проставляем оценки лекторам
-student1.rate_ls(lecturer1, 'Python', 9)
-student1.rate_ls(lecturer1, 'Django 5', 8)
-student1.rate_ls(lecturer1, 'OOP', 10)
-student2.rate_ls(lecturer2, 'Manual testing', 7)
-student2.rate_ls(lecturer2, 'Java', 7)
-student2.rate_ls(lecturer2, 'Autotest', 9)
+    student1.rate_ls(lecturer1, 'Python', 9)
+    student1.rate_ls(lecturer1, 'Django 5', 8)
+    student1.rate_ls(lecturer1, 'OOP', 10)
+    student2.rate_ls(lecturer2, 'Manual testing', 7)
+    student2.rate_ls(lecturer2, 'Java', 7)
+    student2.rate_ls(lecturer2, 'Autotest', 9)
 
 # Проставляем оценки студентам
-reviewer1.rate_hw(student1, 'Python', 10)
-reviewer1.rate_hw(student1, 'Django 5', 6)
-reviewer1.rate_hw(student1, 'OOP', 8)
-reviewer2.rate_hw(student2, 'Manual testing', 7)
-reviewer2.rate_hw(student2, 'Java', 9)
-reviewer2.rate_hw(student2, 'Autotest', 10)
+    reviewer1.rate_hw(student1, 'Python', 10)
+    reviewer1.rate_hw(student1, 'Django 5', 6)
+    reviewer1.rate_hw(student1, 'OOP', 8)
+    reviewer2.rate_hw(student2, 'Manual testing', 7)
+    reviewer2.rate_hw(student2, 'Java', 9)
+    reviewer2.rate_hw(student2, 'Autotest', 10)
 
-print('Test #1') # Задействуем функцию неформального представления __str__
-print(student1)
-print('=============')
-print(student2)
-print('=============')
-print(lecturer1)
-print('=============')
-print(lecturer2)
-print('=============')
-print(reviewer1)
-print('=============')
-print(reviewer2)
-print('=============================')
-print()
-
-
-print('Test #2') # Сравниваем лекторов
-print(lecturer1 == lecturer2)
-print('=============')
-print(lecturer1 != lecturer2)
-print('=============')
-print(lecturer1 < lecturer2)
-print('=============')
-print(lecturer1 > lecturer2)
-print('=============')
-print(lecturer1 <= lecturer2)
-print('=============')
-print(lecturer1 >= lecturer2)
-print('=============================')
-print()
+    print('Test #1') # Задействуем функцию неформального представления __str__
+    print(student1)
+    print('=============')
+    print(student2)
+    print('=============')
+    print(lecturer1)
+    print('=============')
+    print(lecturer2)
+    print('=============')
+    print(reviewer1)
+    print('=============')
+    print(reviewer2)
+    print('=============================')
+    print()
 
 
-print('Test #3') # Задействуем функцию для подсчета средней оценки за лекции всех лекторов в рамках курса
-print(middle_grade_ls([lecturer1, lecturer2], 'Python'))
-print('=============')
-print(middle_grade_ls([lecturer1, lecturer2], 'Django 5'))
-print('=============')
-print(middle_grade_ls([lecturer1, lecturer2], 'OOP'))
-print('=============')
-print(middle_grade_ls([lecturer1, lecturer2], 'Manual testing'))
-print('=============')
-print(middle_grade_ls([lecturer1, lecturer2], 'Java'))
-print('=============')
-print(middle_grade_ls([lecturer1, lecturer2], 'Autotest'))
-print('=============================')
-print()
+    print('Test #2') # Сравниваем лекторов
+    print(lecturer1 == lecturer2)
+    print('=============')
+    print(lecturer1 != lecturer2)
+    print('=============')
+    print(lecturer1 < lecturer2)
+    print('=============')
+    print(lecturer1 > lecturer2)
+    print('=============')
+    print(lecturer1 <= lecturer2)
+    print('=============')
+    print(lecturer1 >= lecturer2)
+    print('=============================')
+    print()
 
-print('Test #4') # Задействуем функцию для подсчета средней оценки за домашние задания по всем студентам в рамках конкретного курса
-print(middle_grade_hw([student1, student2], 'Python'))
-print('=============')
-print(middle_grade_hw([student1, student2], 'Django 5'))
-print('=============')
-print(middle_grade_hw([student1, student2], 'OOP'))
-print('=============')
-print(middle_grade_hw([student1, student2], 'Manual testing'))
-print('=============')
-print(middle_grade_hw([student1, student2], 'Java'))
-print('=============')
-print(middle_grade_hw([student1, student2], 'Autotest'))
+
+    print('Test #3') # Задействуем функцию для подсчета средней оценки за лекции всех лекторов в рамках курса
+    print(middle_grade_ls([lecturer1, lecturer2], 'Python'))
+    print('=============')
+    print(middle_grade_ls([lecturer1, lecturer2], 'Django 5'))
+    print('=============')
+    print(middle_grade_ls([lecturer1, lecturer2], 'OOP'))
+    print('=============')
+    print(middle_grade_ls([lecturer1, lecturer2], 'Manual testing'))
+    print('=============')
+    print(middle_grade_ls([lecturer1, lecturer2], 'Java'))
+    print('=============')
+    print(middle_grade_ls([lecturer1, lecturer2], 'Autotest'))
+    print('=============================')
+    print()
+
+    print('Test #4') # Задействуем функцию для подсчета средней оценки за домашние задания по всем студентам в рамках конкретного курса
+    print(middle_grade_hw([student1, student2], 'Python'))
+    print('=============')
+    print(middle_grade_hw([student1, student2], 'Django 5'))
+    print('=============')
+    print(middle_grade_hw([student1, student2], 'OOP'))
+    print('=============')
+    print(middle_grade_hw([student1, student2], 'Manual testing'))
+    print('=============')
+    print(middle_grade_hw([student1, student2], 'Java'))
+    print('=============')
+    print(middle_grade_hw([student1, student2], 'Autotest'))
+    
